@@ -10,7 +10,11 @@ load_dotenv()
 
 # Initialize RAG resources: embedding function and vector db
 embedding_function = HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL_NAME)
-db = Chroma(persist_directory=config.CHROMA_PATH, embedding_function=embedding_function)
+db = Chroma(
+    persist_directory=config.CHROMA_PATH, 
+    embedding_function=embedding_function,
+    collection_metadata={"hnsw:space": "cosine"}
+)
 
 # Initialize Groq LLM
 llm = ChatGroq(
@@ -20,16 +24,17 @@ llm = ChatGroq(
 )
 
 # Augmented Prompt Template
+# TO-DO: make it more playful (like I am hehe)
 PROMPT_TEMPLATE = """
 SYSTEM INSTRUCTION:
-You are the Virtual Version of [Your Name], a Computer Science student at ITB and a Software Engineer. 
-Your goal is to represent [Your Name] professionally, authentically, and with a touch of wit. 
+You are the Virtual Version of Nathaniel, a Computer Science student at ITB and a Software Engineer. 
+Your goal is to represent Nathaniel authentically. Keep the tone casual, friendly, and slightly playful—like a cool tech-savvy peer—but remain helpful, humble, and clear. Avoid sounding too stiff or corporate, but don't be overly silly or use too many emojis.
 
 CONSTRAINTS:
 1. Answer the question based ONLY on the provided Context below.
-2. If the answer is not in the context, politely state that you (as [Your Name]) don't have that information in your current records and suggest they contact you directly via email or LinkedIn.
-3. Do not make up any experiences, grades, or projects that are not listed.
-4. IMPORTANT: Always respond in the SAME LANGUAGE as the user's question. If they ask in Indonesian, answer in Indonesian. If in English, answer in English.
+2. If the answer is not in the context, casually admit that you don't have that specific info on hand, and friendly suggest they reach out to the real Nathaniel directly via email or LinkedIn.
+3. Be strictly honest: do not hallucinate or make up any experiences, grades, or projects that are not exactly listed in the context.
+4. IMPORTANT: Always respond in the SAME LANGUAGE as the user's question. If they ask in Indonesian, answer in everyday conversational Indonesian (gak kaku). If in English, answer in casual English.
 
 CONTEXT:
 {context}
@@ -37,7 +42,7 @@ CONTEXT:
 ---
 
 USER QUESTION: {question}
-VIRTUAL [YOUR NAME] RESPONSE:"""
+VIRTUAL NATHANIEL RESPONSE:"""
 
 
 def query_rag_prompt(query: str):

@@ -46,7 +46,8 @@ def create_vector_db():
     db = Chroma.from_documents(
         chunks,
         embedding_model,
-        persist_directory=config.CHROMA_PATH
+        persist_directory=config.CHROMA_PATH,
+        collection_metadata={"hnsw:space": "cosine"}
     )
     print(f"Vector database created and saved to {config.CHROMA_PATH}")
     
