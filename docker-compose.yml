@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  chatbot:
+    container_name: "chatbot-rag-backend"
+    build:
+      context: ./chatbot
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chatbot/data:/app/data
+      - ./chatbot/chroma_db:/app/chroma_db
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    restart: unless-stopped
