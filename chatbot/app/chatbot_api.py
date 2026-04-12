@@ -46,7 +46,7 @@ async def chatbot_endpoint(request: ChatRequest):
         
         # Return response
         return {
-            "response", response
+            "response": response
         }
         
     except Exception as e:
