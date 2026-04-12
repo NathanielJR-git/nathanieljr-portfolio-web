@@ -1,2 +1,3 @@
 # Environment Variables
 chroma_db/
+.env
