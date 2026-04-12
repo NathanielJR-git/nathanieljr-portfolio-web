@@ -6,10 +6,10 @@ class Configuration:
     LLM_MODEL_NAME: str       = "llama-3.1-8b-instant"
     
     # RAG Parameters
-    CHUNK_SIZE: int         = 500
-    CHUNK_OVERLAP: int      = 100
-    VECTOR_SEARCH_K: int    = 3
-    SIMILARITY_THRESHOLD    = 0.1
+    CHUNK_SIZE: int             = 500
+    CHUNK_OVERLAP: int          = 100
+    VECTOR_SEARCH_K: int        = 3
+    SIMILARITY_THRESHOLD: float = 0.1
     
     # Path
     DATA_PATH: str       = "data"
