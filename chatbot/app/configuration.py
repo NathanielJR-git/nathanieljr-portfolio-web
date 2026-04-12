@@ -1,5 +1,4 @@
 # All configuration including model names, RAG parameters and path
-import os
 
 class Configuration:
     # Model
@@ -11,9 +10,8 @@ class Configuration:
     VECTOR_SEARCH_K: int    = 3
     
     # Path
-    API_PATH: str        = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    DATA_PATH: str       = os.path.join(API_PATH, "data")
-    CHROMA_PATH: str     = os.path.join(API_PATH, "chroma_db")
+    DATA_PATH: str       = "data"
+    CHROMA_PATH: str     = "chroma_db"
     
     
 config = Configuration() 
