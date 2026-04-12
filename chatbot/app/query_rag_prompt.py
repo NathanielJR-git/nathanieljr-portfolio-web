@@ -97,13 +97,13 @@ def query_rag_prompt(query: str):
         str: query answer via Groq API
     """
     # Prompt for subqueries and their variations
-    planner_prompt_template = ChatPromptTemplate.from_template(RESPONSE_PROMPT)
+    planner_prompt_template = ChatPromptTemplate.from_template(PLANNER_PROMPT)
     planner_prompt = planner_prompt_template.format(question=query)
     planner_response = llm.invoke(planner_prompt)
     
     try:
         # Parse JSON response
-        search_plans = json.loads(planner_response)
+        search_plans = json.loads(planner_response.content)
     except:
         # Fallback to default query if planning failed
         search_plans = {"queries": [query]}
@@ -111,10 +111,10 @@ def query_rag_prompt(query: str):
     # Retrieval and deduplication
     unique_docs = {}
     
-    for query in search_plans.get("queries", []):
+    for subquery in search_plans.get("queries", []):
         # Retrieve 3 best chunks from db for each subqueries
         results = db.similarity_search_with_relevance_scores(
-            query_rag_prompt, 
+            subquery, 
             k=config.VECTOR_SEARCH_K
         )
         
