@@ -26,7 +26,7 @@ export function Hero() {
             // mix-blend-screen adalah kunci untuk menghilangkan background hitam!
             className="absolute inset-0 w-full h-full object-contain mix-blend-screen"
           >
-            <source src="/nate-hero-memoji.mp4" type="video/mp4" />
+            <source src="/memojis/nate-hero-memoji.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
