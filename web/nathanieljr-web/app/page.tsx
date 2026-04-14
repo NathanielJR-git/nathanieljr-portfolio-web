@@ -7,7 +7,7 @@ import { Intro } from "@/components/intro"
 import { Projects } from "@/components/projects"
 import { Achievements } from "@/components/achievements"
 import { Footer } from "@/components/footer"
-import { NateBotOverlay } from "@/components/natebot-overlay"
+import { NateBot } from "@/components/natebot"
 
 export default function Page() {
   const [isNateBotOpen, setIsNateBotOpen] = useState(false)
@@ -15,7 +15,6 @@ export default function Page() {
   return (
     <main className="relative min-h-screen bg-zinc-950">
       
-      {/* Wrapper z-50 memastikan Navbar selalu di atas lapisan Hero & Intro saat di-scroll */}
       <div className="relative z-50">
         <Navbar onChatbotClick={() => setIsNateBotOpen(true)} />
       </div>
@@ -43,7 +42,7 @@ export default function Page() {
       <Footer />
 
       {/* NateBot Overlay */}
-      <NateBotOverlay
+      <NateBot
         isOpen={isNateBotOpen}
         onClose={() => setIsNateBotOpen(false)}
       />
