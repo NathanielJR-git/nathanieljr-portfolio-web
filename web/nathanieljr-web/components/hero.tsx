@@ -6,7 +6,7 @@ interface HeroProps {
 
 export function Hero({ onVideoClick }: HeroProps) {
   return (
-    <section className="flex flex-1 flex-col items-center justify-center px-4 pt-48 md:pt-32 pb-16">
+    <section className="relative flex flex-1 flex-col items-center justify-center px-4 pt-48 md:pt-32 pb-16 overflow-hidden">
       {/* Name */}
       <h1 className="text-center text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl lg:text-5xl">
         Nathaniel Jonathan Rusli
