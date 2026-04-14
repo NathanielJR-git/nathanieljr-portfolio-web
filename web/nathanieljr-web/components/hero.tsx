@@ -30,11 +30,28 @@ export function Hero({ onVideoClick }: HeroProps) {
             loop 
             muted 
             playsInline 
-            // mix-blend-screen adalah kunci untuk menghilangkan background hitam!
-            className="absolute inset-0 w-full h-full object-contain mix-blend-screen"
+            className="absolute inset-0 w-full h-full object-contain mix-blend-screen scale-[1.35] sm:scale-[1.15] md:scale-100"
           >
             <source src="/memojis/nate-hero-memoji.mp4" type="video/mp4" />
           </video>
+        </div>
+      </div>
+
+      {/* Bottom Section Label */}
+      <div className="mt-8 flex flex-col items-center justify-center">
+        <h2 className="text-center text-xs font-large uppercase tracking-[0.3em] text-white mb-8">
+          Click Me to Chat with NateBot!
+        </h2>
+
+        {/* Scroll Down Indicator */}
+        <div className="flex flex-col items-center gap-2">
+          {/* Animated Text */}
+          <span 
+            className="text-[10px] uppercase tracking-[0.3em] font-semibold bg-[linear-gradient(110deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0)_40%,rgba(255,255,255,1)_50%,rgba(255,255,255,0)_60%,rgba(255,255,255,0)_100%)] bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer"
+          >
+            Scroll Down
+          </span>
+          
         </div>
       </div>
     </section>

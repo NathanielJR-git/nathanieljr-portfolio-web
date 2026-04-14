@@ -21,13 +21,6 @@ export default function Page() {
       
       {/* Hero Section */}
       <Hero onVideoClick={() => setIsNateBotOpen(true)} />
-
-      {/* Bottom Section Label */}
-      <section className="pb-24">
-        <h2 className="text-center text-xs font-large uppercase tracking-[0.3em] text-white">
-          Click to Chat with My Clone!
-        </h2>
-      </section>
       
       {/* Intro Section */}
       <Intro />
