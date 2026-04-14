@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
+import { Intro } from "@/components/intro"
 import { NateBotOverlay } from "@/components/natebot-overlay"
 
 export default function Page() {
@@ -11,8 +12,12 @@ export default function Page() {
   return (
     <main className="relative min-h-screen bg-zinc-950">
       
-      <Navbar onChatbotClick={() => setIsNateBotOpen(true)} />
+      {/* Wrapper z-50 memastikan Navbar selalu di atas lapisan Hero & Intro saat di-scroll */}
+      <div className="relative z-50">
+        <Navbar onChatbotClick={() => setIsNateBotOpen(true)} />
+      </div>
       
+      {/* Hero Section */}
       <Hero />
 
       {/* Bottom Section Label */}
@@ -21,6 +26,9 @@ export default function Page() {
           Click Me!
         </h2>
       </section>
+      
+      {/* Intro Section */}
+      <Intro />
 
       {/* NateBot Overlay */}
       <NateBotOverlay
