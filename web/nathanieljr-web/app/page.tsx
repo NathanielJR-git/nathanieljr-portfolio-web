@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Intro } from "@/components/intro"
+import { Projects } from "@/components/projects"
+import { Achievements } from "@/components/achievements"
 import { NateBotOverlay } from "@/components/natebot-overlay"
 
 export default function Page() {
@@ -22,13 +24,19 @@ export default function Page() {
 
       {/* Bottom Section Label */}
       <section className="pb-24">
-        <h2 className="text-center text-xs font-medium uppercase tracking-[0.3em] text-zinc-600">
-          Click Me!
+        <h2 className="text-center text-xs font-large uppercase tracking-[0.3em] text-white">
+          Click Me to Chat with Me!
         </h2>
       </section>
       
       {/* Intro Section */}
       <Intro />
+
+      {/* Projects Section */}
+      <Projects />
+
+      {/* Achievements Section */}
+      <Achievements />
 
       {/* NateBot Overlay */}
       <NateBotOverlay
