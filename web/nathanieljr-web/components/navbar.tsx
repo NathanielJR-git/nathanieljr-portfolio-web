@@ -46,10 +46,47 @@ export function Navbar({ onChatbotClick }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLElement>, targetId: string) => {
+    e.preventDefault();
+    let targetPosition = 0;
+
+    if (targetId !== "#top") {
+      const targetElement = document.getElementById(targetId.substring(1));
+      if (!targetElement) return;
+      targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+    }
+
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1200; // 1200 ms request by user
+    let start: number | null = null;
+
+    const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      } else {
+        window.scrollTo(0, targetPosition);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
   const navLinks = [
     { label: "NateBot", href: "#natebot" },
-    { label: "Projects", href: "#projects" },
-    { label: "Achievements", href: "#achievements" },
+    { label: "Projects", href: "#projects-section" },
+    { label: "Achievements", href: "#achievements-section" },
   ]
 
   return (
@@ -60,7 +97,13 @@ export function Navbar({ onChatbotClick }: NavbarProps) {
         aria-label="Toggle Navigation"
       >
         {/* Left: Custom Click Cursor Logo */}
-        <div className={`flex items-center gap-3 transition-transform duration-[1200ms] ease-in-out flex-shrink-0 ${isExpanded ? 'rotate-0' : '-rotate-[20deg] scale-110'}`}>
+        <div 
+          onClick={(e) => {
+            e.stopPropagation()
+            handleSmoothScroll(e, "#top")
+          }}
+          className={`flex items-center gap-3 transition-transform duration-[1200ms] ease-in-out flex-shrink-0 cursor-pointer ${isExpanded ? 'rotate-0' : '-rotate-[20deg] scale-110'}`}
+        >
           <svg
             className="h-5 w-5 text-white"
             viewBox="0 0 24 24"
@@ -86,7 +129,7 @@ export function Navbar({ onChatbotClick }: NavbarProps) {
           <ul className="flex items-center gap-6 whitespace-nowrap">
             {navLinks.map((link) => (
               <li key={link.label}>
-                {link.label === "Chatbot" && onChatbotClick ? (
+                {link.label === "NateBot" && onChatbotClick ? (
                   <button
                     onClick={onChatbotClick}
                     className="text-sm font-medium text-white transition-colors hover:text-zinc-300"
@@ -96,6 +139,7 @@ export function Navbar({ onChatbotClick }: NavbarProps) {
                 ) : (
                   <a
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="text-sm font-medium text-white transition-colors hover:text-zinc-300"
                   >
                     {link.label}
