@@ -180,8 +180,8 @@ export function Navbar({ onChatbotClick }: NavbarProps) {
           </div>
         </div>
 
-        {/* Right: Time (Always Visible) */}
-        <div className={`flex items-center transition-opacity duration-[1200ms] ease-in-out flex-shrink-0 ${isExpanded ? "opacity-100" : "opacity-80"}`}>
+        {/* Right: Time (Hidden on Mobile, Visible on Desktop) */}
+        <div className={`hidden md:flex items-center transition-opacity duration-[1200ms] ease-in-out flex-shrink-0 ${isExpanded ? "opacity-100" : "opacity-80"}`}>
           <span className="min-w-[4.5rem] text-right text-sm font-medium text-white pointer-events-none">
             {time}
           </span>
