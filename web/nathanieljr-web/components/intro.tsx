@@ -27,7 +27,7 @@ export function Intro() {
       // Animation for each sentence
       texts.forEach((text, i) => {
         // Light text up
-        tl.to(text, { 
+        tl.to(text as HTMLElement, { 
           color: "rgba(255, 255, 255, 1)", 
           duration: 1,
           ease: "power1.inOut"
@@ -35,7 +35,7 @@ export function Intro() {
         
         // If not last line, decrease opacity
         if (i !== texts.length - 1) {
-          tl.to(text, { 
+          tl.to(text as HTMLElement, { 
             color: "rgba(255, 255, 255, 0.3)", 
             duration: 0.8,
             ease: "power1.inOut"
