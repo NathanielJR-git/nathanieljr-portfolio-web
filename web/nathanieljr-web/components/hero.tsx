@@ -6,7 +6,7 @@ interface HeroProps {
 
 export function Hero({ onVideoClick }: HeroProps) {
   return (
-    <section className="flex flex-1 flex-col items-center justify-center px-4 pt-32 pb-16">
+    <section className="flex flex-1 flex-col items-center justify-center px-4 pt-48 md:pt-32 pb-16">
       {/* Name */}
       <h1 className="text-center text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl lg:text-5xl">
         Nathaniel Jonathan Rusli
@@ -18,7 +18,7 @@ export function Hero({ onVideoClick }: HeroProps) {
       </p>
 
       {/* Cinematic Video Container */}
-      <div className="relative mt-16 w-full max-w-4xl">
+      <div className="relative mt-24 md:mt-16 w-full max-w-4xl">
 
         {/* Video container */}
         <div 
@@ -38,7 +38,7 @@ export function Hero({ onVideoClick }: HeroProps) {
       </div>
 
       {/* Bottom Section Label */}
-      <div className="mt-8 flex flex-col items-center justify-center">
+      <div className="mt-24 md:mt-8 flex flex-col items-center justify-center">
         <h2 className="text-center text-xs font-large uppercase tracking-[0.3em] text-white mb-8">
           Click Me to Chat with NateBot!
         </h2>
