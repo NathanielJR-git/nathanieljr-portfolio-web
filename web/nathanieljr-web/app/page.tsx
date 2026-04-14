@@ -6,6 +6,7 @@ import { Hero } from "@/components/hero"
 import { Intro } from "@/components/intro"
 import { Projects } from "@/components/projects"
 import { Achievements } from "@/components/achievements"
+import { Footer } from "@/components/footer"
 import { NateBotOverlay } from "@/components/natebot-overlay"
 
 export default function Page() {
@@ -20,12 +21,12 @@ export default function Page() {
       </div>
       
       {/* Hero Section */}
-      <Hero />
+      <Hero onVideoClick={() => setIsNateBotOpen(true)} />
 
       {/* Bottom Section Label */}
       <section className="pb-24">
         <h2 className="text-center text-xs font-large uppercase tracking-[0.3em] text-white">
-          Click Me to Chat with Me!
+          Click to Chat with My Clone!
         </h2>
       </section>
       
@@ -37,6 +38,9 @@ export default function Page() {
 
       {/* Achievements Section */}
       <Achievements />
+
+      {/* Footer Section */}
+      <Footer />
 
       {/* NateBot Overlay */}
       <NateBotOverlay
