@@ -12,3 +12,16 @@ services:
     env_file:
       - ./chatbot/.env
     restart: unless-stopped
+
+  web:
+    container_name: "nathanieljr-web"
+    build:
+      context: ./web/nathanieljr-web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://chatbot:8000/chatbot
+    depends_on:
+      - chatbot
+    restart: unless-stopped
