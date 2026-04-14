@@ -49,15 +49,15 @@ export function Intro() {
   return (
     <section ref={containerRef} className="h-[300vh]">
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <div className="max-w-4xl px-6 text-center">
-          <p className="intro-text text-3xl md:text-6xl font-medium tracking-tight text-white/20 mb-4 block">
+        <div className="max-w-4xl px-6 text-center space-y-12">
+          <p className="intro-text text-3xl md:text-6xl font-medium tracking-tight text-white/20 block">
             {"Hey, I'm Nathaniel! 👋🏻 I'm heading into my final year of Computer Science at ITB."}
           </p>
-          <p className="intro-text text-3xl md:text-6xl font-medium tracking-tight text-white/20 mb-4 block">
+          <p className="intro-text text-3xl md:text-6xl font-medium tracking-tight text-white/20 block">
             {"I'm a massive nerd when it comes to AI, Data, and Finance—and I've snagged a few national wins in data science and equity research along the way!"}
           </p>
-          <p className="intro-text text-3xl md:text-6xl font-medium tracking-tight text-white/20 mb-4 block">
-            {"Keep scrolling to check out some of the coolest things I've built."}
+          <p className="intro-text text-3xl md:text-6xl font-medium tracking-tight text-white/20 block">
+            {"Try chatting with NateBot and keep scrolling to check out my achievements and projects I've built!"}
           </p>
         </div>
       </div>
