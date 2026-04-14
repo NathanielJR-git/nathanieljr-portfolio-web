@@ -23,7 +23,7 @@ export function Achievements() {
 
   return (
     // Inherit bg-[#101010] from the main page
-    <section className="py-24 px-6 md:px-12 relative">
+    <section id="achievements-section" className="py-24 px-6 md:px-12 relative">
       {/* Section Title */}
       <h2 className="text-zinc-500 text-sm uppercase tracking-widest mb-16">
         Achievements
@@ -36,12 +36,14 @@ export function Achievements() {
             {achievements.map((achievement, index) => (
               <li
                 key={achievement.id}
-                className="group/item relative cursor-pointer"
+                className="group/item relative cursor-pointer md:cursor-default"
                 data-image={achievement.image}
                 onMouseEnter={() => setActiveAchievement(achievement)}
                 onClick={() => {
-                  setActiveAchievement(achievement)
-                  setIsMobileOpen(true)
+                  if (window.innerWidth < 768) {
+                    setActiveAchievement(achievement)
+                    setIsMobileOpen(true)
+                  }
                 }}
               >
                 <div className="flex items-baseline justify-between gap-4 transition-all duration-500 ease-out group-hover/item:text-white group-hover/list:text-zinc-700 group-hover/list:blur-[1.5px] group-hover/item:!text-white group-hover/item:!blur-none group-hover/item:scale-[1.02] origin-left">
@@ -70,13 +72,13 @@ export function Achievements() {
           activeAchievement && !isMobileOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
       >
-        <div className="relative aspect-[4/3] w-[420px] rounded-xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.8)] border border-zinc-800">
+        <div className="relative aspect-[4/3] w-[600px] xl:w-[700px] rounded-xl overflow-hidden bg-[#101010] shadow-[0_40px_80px_rgba(0,0,0,0.8)] border border-zinc-800">
           {activeAchievement ? (
             <Image
               src={activeAchievement.image}
               alt={activeAchievement.title}
               fill
-              className="object-contain opacity-90"
+              className="object-contain"
             />
           ) : null}
         </div>
