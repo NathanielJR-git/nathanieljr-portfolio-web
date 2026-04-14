@@ -20,7 +20,7 @@ export function NateBot({ isOpen, onClose }: NateBotProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "bot",
-      content: "Hey there! I'm NateBot, Nathaniel's AI assistant. I can tell you about his projects, skills, or achievements. What would you like to know?"
+      content: "Hey there! I'm NateBot, a virtual version of Nathaniel. Feel free to ask anything about me!"
     }
   ])
   
@@ -60,7 +60,7 @@ export function NateBot({ isOpen, onClose }: NateBotProps) {
       console.error(error)
       setMessages((prev) => [
         ...prev, 
-        { role: "bot", content: "Oops, something went wrong on my end. Please try again later." }
+        { role: "bot", content: "Oops, something went wrong on my head. Please ask me again later!" }
       ])
     } finally {
       setIsLoading(false)
@@ -127,7 +127,11 @@ export function NateBot({ isOpen, onClose }: NateBotProps) {
                 <div className="mr-2 h-8 w-8 flex-shrink-0 rounded-full bg-white p-1 relative">
                   <div className="relative h-full w-full overflow-hidden rounded-full">
                     <Image
-                      src="/memojis/nate-memoji-happy.jpg"
+                      src={
+                        msg.content.toLowerCase().startsWith("sorry") || msg.content.toLowerCase().startsWith("oops")
+                          ? "/memojis/nate-memoji-dizzy.jpg"
+                          : "/memojis/nate-memoji-happy.jpg"
+                      }
                       alt="NateBot"
                       fill
                       className="object-contain scale-105"
