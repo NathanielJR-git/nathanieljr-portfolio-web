@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 
 const achievements = [
-  { id: 1, title: "Most Outstanding Student of GCI UTokyo", image: "/achievements/most-outstanding-student-gci.png" },
+  { id: 1, title: "Most Outstanding Student of Global Consumer Intelligence (GCI) UTokyo", image: "/achievements/most-outstanding-student-gci.png" },
   { id: 2, title: "2nd Winner of ARA Data Science Competition", image: "/achievements/ara-dsc.png" },
   { id: 3, title: "1st Winner of IFEST Data Analytics Competition", image: "/achievements/ifest-dac.png" },
   { id: 4, title: "5th Place Finalist of Logika UI Data Science Competition", image: "/achievements/logika-ui-dsc.png" },
