@@ -18,7 +18,7 @@ interface Project {
 }
 
 const DESKTOP_PROJECTS: Project[] = [
-  { title: "AI-Powered Cinematic Portfolio & RAG Engine", description: "Architected a high-fidelity portfolio featuring an embedded Retrieval-Augmented Generation (RAG) chatbot. Engineered an advanced retrieval strategy utilizing query decomposition and multi-query routing via LangChain to handle complex user interactions. Orchestrated the entire deployment pipeline using Docker and GitHub Actions for a robust, containerized delivery on AWS infrastructure.", techStack: ["LangChain", "RAG", "ChromaDB", "FastAPI", "Next.js", "GSAP", "AWS", "Docker", "GitHub Actions"], link: "https://github.com/0xNathaniel/nathanieljr-portfolio-web", image: "/projects/nathanieljr-portfolio-web.png", aspectRatio: "aspect-[4/5]" },
+  { title: "AI-Powered Cinematic Portfolio & RAG Engine (This Website)", description: "Architected a high-fidelity portfolio featuring an embedded Retrieval-Augmented Generation (RAG) chatbot. Engineered an advanced retrieval strategy utilizing query decomposition and multi-query routing via LangChain to handle complex user interactions. Orchestrated the entire deployment pipeline using Docker and GitHub Actions for a robust, containerized delivery on AWS infrastructure.", techStack: ["LangChain", "RAG", "ChromaDB", "FastAPI", "Next.js", "GSAP", "AWS", "Docker", "GitHub Actions"], link: "https://github.com/0xNathaniel/nathanieljr-portfolio-web", image: "/projects/nathanieljr-portfolio-web.png", aspectRatio: "aspect-[4/5]" },
   { title: "Pothole Semantic Segmentation with Statistical EDA and EoMT", description: "Architected a high-precision semantic segmentation pipeline to automate the detection of road wear and potholes from drone imagery. The methodology involved rigorous statistical EDA to handle class imbalances before training. Deployed an Evaluation of Model Trust (EoMT) framework alongside PyTorch to ensure the reliability of predictions. Won 1st Place at the National Informatics Festival Unpad for this research.", techStack: ["PyTorch", "EoMT", "U-Net", "SegFormer", "Hugging Face", "OpenCV", "Semantic Segmentation", "Computer Vision"], link: "#", image: "/projects/pothole-semantic-segmentation-eomt.png", aspectRatio: "aspect-square" },
   { title: "Cultural Image Classification with DINOv3 and Explainable AI (XAI)", description: "Architected a state-of-the-art cultural image classifier using the DINOv3-Huge vision transformer with a custom classification head for fine-grained Indonesian cultural heritage recognition. Conducted extensive transfer learning from self-supervised pretraining, integrating feature extraction, hyperparameter optimization, and explainable AI techniques to interpret model decisions on complex visual patterns. Delivered robust performance through meticulous fine-tuning and comprehensive evaluation, securing 5th place nationally in the Logika UI Data Science Competition.", techStack: ["DINOv3", "ResNet", "EfficientNet", "Grad-CAM", "Attention Rollout", "PyTorch", "Hugging Face", ], link: "https://github.com/0xNathaniel/cultural-image-classification-dinov3", image: "/projects/cultural-image-classification-dinov3-xai.png", aspectRatio: "aspect-[16/9]" },
   { title: "Mealdrop", description: "Engineered scalable backend microservices and responsive mobile interfaces as a Software Engineer for the Mealdrop platform. Designed and optimized complex relational database schemas in PostgreSQL to handle high-volume, concurrent transaction data efficiently. Streamlined the server infrastructure on AWS, ensuring high availability and seamless data synchronization with the Flutter client.", techStack: ["System Architecture", "AWS", "PostgreSQL", "Flutter"], link: "#", image: "/projects/mealdrop.png", aspectRatio: "aspect-square" },
@@ -29,13 +29,7 @@ const DESKTOP_PROJECTS: Project[] = [
   { title: "Sobel Detection Parallel Programming", description: "Engineered a high-performance image processing engine implementing the Sobel operator using CUDA for SIMT and GPU acceleration. This project demonstrates extreme proficiency in high-performance computing (HPC) and low-level hardware optimization for latency-critical tasks.", techStack: ["CUDA", "C++"], link: "#", image: "/projects/sobel-parallel-programming.jpg", aspectRatio: "aspect-video" },
 ];
 
-const MOBILE_PROJECTS: Project[] = [
-  DESKTOP_PROJECTS[0], // OS Kernel
-  DESKTOP_PROJECTS[1], // Sobel Parallel
-  DESKTOP_PROJECTS[2], // Raft
-  DESKTOP_PROJECTS[3], // BOPM
-  DESKTOP_PROJECTS[8]  // AI Portfolio/RAG
-];
+const MOBILE_PROJECTS: Project[] = DESKTOP_PROJECTS.slice(0, 5);
 
 // Helper to chunk the desktop array into 3 columns
 const desktopColumn1 = DESKTOP_PROJECTS.filter((_, i) => i % 3 === 0);
