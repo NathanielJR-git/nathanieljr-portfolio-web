@@ -69,7 +69,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="mt-20 text-center">
         <p className="text-xs text-zinc-600">
-          {"© 2025 Nathaniel Jonathan Rusli. All rights reserved."}
+          {"© 2026 Nathaniel Jonathan Rusli. All rights reserved."}
         </p>
       </div>
     </footer>
