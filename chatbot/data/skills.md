@@ -23,7 +23,7 @@
 - **Generative AI & LLMs:** RAG (Retrieval-Augmented Generation), LangChain, Prompt Engineering, Vector Databases (ChromaDB)
 
 ## Finance & Investment
-- **Core Skills:** Equity Research, Financial Modeling, Valuation, Statistical Simulations, Swing Trading
+- **Core Skills:** Equity Research, Financial Modeling, Financial Analylsis, Valuation, Statistical Simulations, Swing Trading
 
 ## Mathematics & Statistics
 - **Core Concepts:** Calculus, Linear Algebra, Probability, Statistics
