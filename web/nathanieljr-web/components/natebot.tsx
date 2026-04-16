@@ -20,7 +20,7 @@ export function NateBot({ isOpen, onClose }: NateBotProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "bot",
-      content: "Hey there! I'm NateBot, a virtual version of Nathaniel. Feel free to ask anything about me!"
+      content: "Hey there! I'm NateBot, Nathaniel's digital twin. Feel free to ask anything about me!"
     }
   ])
   
