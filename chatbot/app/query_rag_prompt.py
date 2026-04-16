@@ -1,12 +1,12 @@
 import json
 import os
 from app.configuration import config
+from app.prompt_templates import PLANNER_PROMPT, RESPONSE_PROMPT
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
-from promp_templates import PLANNER_PROMPT, RESPONSE_PROMPT
 
 
 load_dotenv()
