@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@layer base {
+  html, body {
+    background-color: #000;
+    overscroll-behavior-y: none;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

@@ -90,7 +90,7 @@ export function Navbar({ onChatbotClick }: NavbarProps) {
   ]
 
   return (
-    <header className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none">
+    <header className="fixed top-[max(env(safe-area-inset-top),1.5rem)] inset-x-0 z-50 flex justify-center pointer-events-none">
       <nav 
         onClick={() => setIsExpanded(!isExpanded)}
         className={`pointer-events-auto flex items-center rounded-full border border-white/20 bg-[#101010]/80 p-3 shadow-xl backdrop-blur-md cursor-pointer transition-all duration-[1200ms] ease-in-out group hover:bg-[#101010]/90 hover:border-white/30 ${isExpanded ? 'gap-6 px-6' : 'gap-4 px-4'}`}
