@@ -15,7 +15,9 @@ limiter = Limiter(key_func=get_remote_address)
 app = FastAPI(
     title="Virtual Nathaniel AI API",
     description="Backend API for Nathaniel's Virtual Chatbot",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url=None,
+    redoc_url=None
 )
 
 
@@ -27,7 +29,11 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 # Setup middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # TO-DO: update with frontend domain, don't forget!
+    allow_origins=[
+        "http://localhost:3000",
+        "https://nathanieljr.dev",
+        "https://www.nathanieljr.dev"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
