@@ -14,7 +14,7 @@ export function Hero({ onVideoClick }: HeroProps) {
 
       {/* Subtitle */}
       <p className="mt-4 text-center text-lg font-medium tracking-tight text-white sm:text-xl">
-        Aspiring AI/ML Engineer
+        AI and Data Enthusiast
       </p>
 
       {/* Cinematic Video Container */}
