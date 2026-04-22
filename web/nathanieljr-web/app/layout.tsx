@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Nathaniel Portfolio',
     images: [
       {
-        url: '/memojis/nate-memoji-happy.jpg',
+        url: '/seo/nate-seo.png',
         width: 1200,
         height: 630,
         alt: 'Nathaniel Jonathan Portfolio Preview',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Nathaniel Jonathan Rusli | AI and Data Enthusiast',
     description: 'Nathaniel Jonathan Rusli\'s Portfolio Website',
-    images: ['/memojis/nate-memoji-happy.jpg'],
+    images: ['/seo/nate-seo.png'],
   },
 
   // SEO Robot
