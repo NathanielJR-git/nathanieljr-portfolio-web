@@ -21,16 +21,15 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/nathanieljr-portfolio-web
-
             git pull origin main
 
             echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" > ./chatbot/.env
             echo "HF_TOKEN=${{ secrets.HF_TOKEN }}" >> ./chatbot/.env
-
             echo "NEXT_PUBLIC_API_URL=http://${{ secrets.HOST }}:8000/chatbot" > ./web/nathanieljr-web/.env
 
+            export DOCKER_BUILDKIT=1
             docker-compose up -d --build
 
-            docker system prune -af
+            docker system prune -f
 
             docker ps
