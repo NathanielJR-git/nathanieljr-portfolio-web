@@ -3,7 +3,8 @@
 @layer base {
   html, body {
     background-color: #000;
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
   }
 }
 

@@ -1,5 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   // SEO Dasar
@@ -73,8 +81,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-[100dvh] antialiased">
-      <body className="min-h-[100dvh] flex flex-col bg-black text-white font-sans overscroll-y-none">
+    <html lang="en" className="min-h-[100dvh] antialiased bg-black overscroll-none">
+      <body className="min-h-[100dvh] flex flex-col bg-black text-white font-sans overscroll-none">
         {children}
       </body>
     </html>
