@@ -27,7 +27,6 @@ jobs:
             echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" > ./chatbot/.env
             echo "HF_TOKEN=${{ secrets.HF_TOKEN }}" >> ./chatbot/.env
 
-            # Pastikan NEXT_PUBLIC_API_URL mengarah ke IP/Domain publik Anda
             echo "NEXT_PUBLIC_API_URL=http://${{ secrets.HOST }}:8000/chatbot" > ./web/nathanieljr-web/.env
 
             docker-compose up -d --build

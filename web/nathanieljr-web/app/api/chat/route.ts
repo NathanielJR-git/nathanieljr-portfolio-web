@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     
     // Forward payload to FastAPI backend (defaults to standard docker-compose hostname)
-    const apiUrl = process.env.API_URL || 'http://chatbot:8000/chatbot';
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://chatbot:8000/chatbot';
     const fastApiResponse = await fetch(apiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
