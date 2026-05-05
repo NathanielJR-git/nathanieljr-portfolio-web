@@ -27,7 +27,6 @@ jobs:
             echo "HF_TOKEN=${{ secrets.HF_TOKEN }}" >> ./chatbot/.env
             echo "NEXT_PUBLIC_API_URL=http://${{ secrets.HOST }}:8000/chatbot" > ./web/nathanieljr-web/.env
 
-            export DOCKER_BUILDKIT=1
             docker-compose up -d --build
 
             docker system prune -f
